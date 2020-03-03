@@ -1,0 +1,29 @@
+﻿@model IEnumerable<TestsSite.Models.Question>
+@{
+
+    ViewBag.Title = "Home Page";
+}
+@using TestsSite.Helpers
+
+<div class="row">
+    
+    @foreach (var item in Model)
+    {
+    <div class="col-md-4 shadow-sm border">
+        @item.Title
+        <ul>
+
+            @foreach (var answ in item.Variants)
+            {
+                <li>
+                    @answ.Title - @answ.Value
+                </li>
+            }
+        </ul>
+
+           
+        </div>
+    }
+
+
+</div>
